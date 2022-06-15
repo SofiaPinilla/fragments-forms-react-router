@@ -1,0 +1,31 @@
+// .box {
+//     -webkit-transform: rotate(30deg);
+//     -ms-transform: rotate(30deg);
+//     transform: rotate(30deg);
+//   }
+
+@mixin transform($property, $borderColor) {
+  border: $borderColor;
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box {
+  @include transform(rotate(10deg), 1px solid red);
+}
+.box-2 {
+  @include transform(rotate(180deg), 5px dotted blue);
+}
+
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+.message {
+  @extend %message-shared;
+}
+.success {
+  @extend %message-shared;
+  border-color: green;
+}

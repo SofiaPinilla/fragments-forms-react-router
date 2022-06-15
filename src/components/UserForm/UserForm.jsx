@@ -1,22 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./UserForm.scss"
 const UserForm = () => {
-  const [data, setData] = useState({
-    username: "",
-    email: "",
-  });
+    const initialState = {
+        username: "",
+        email: "",
+      };
+  const [data, setData] = useState(initialState);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
-  let navigate = useNavigate();
-
-  const initialState = {
-    username: "",
-    email: "",
-  };
+  const navigate = useNavigate();
 
   const clearState = () => {
-    setData({ ...initialState });
+    setData(initialState);
   };
 
   const handleInputChange = (event) => {
@@ -43,6 +39,17 @@ const UserForm = () => {
     }, 3000);
   };
   return (
+    <>
+    <div className="message">
+        <span>Normal message</span>
+    </div>
+    <div className="success">
+        <span>Success message</span>
+    </div>
+        <div className="box-2">
+            hola
+        </div>
+    <div className="box">
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -63,6 +70,8 @@ const UserForm = () => {
       </button>
       {message}
     </form>
+    </div>
+    </>
   );
 };
 
