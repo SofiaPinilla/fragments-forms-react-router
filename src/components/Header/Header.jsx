@@ -13,6 +13,9 @@ const Header = () => {
         <span>
           <Link to="/user">UserForm</Link>
         </span>
+        <span>
+          <Link to="/characters">Characters</Link>
+        </span>
       </div>
     </nav>
   );
